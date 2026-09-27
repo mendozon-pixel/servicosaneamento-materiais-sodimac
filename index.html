@@ -3,247 +3,414 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sodimac | Construção e Decoração</title>
+    <meta name="description" content="Sodimac - Materiais de construção, reforma e decoração. Encontre tudo para sua obra!">
+    <title>Sodimac - Materiais de Construção e Decoração</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="top-bar">
-            <div class="container top-bar-content">
-                <span><i class="fas fa-phone"></i> (11) 2728-700</span>
-                <span><i class="fas fa-map-marker-alt"></i> Rua Dos Patriotas, 1213 - Ipiranga, São Paulo/SP</span>
-                <span><i class="fas fa-clock"></i> Seg a Sáb: 8h às 20h | Dom: 9h às 15h</span>
-            </div>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span><i class="fas fa-truck"></i> Frete grátis acima de R$ 499</span>
+            <span><i class="fas fa-credit-card"></i> Parcele em até 12x sem juros</span>
+            <span><i class="fas fa-map-marker-alt"></i> Encontre a loja mais próxima</span>
         </div>
-        <div class="main-header">
-            <div class="container header-content">
-                <div class="logo">
-                    <i class="fas fa-hard-hat"></i>
-                    <h1>Sodimac</h1>
-                </div>
-                <div class="search-bar">
-                    <input type="text" placeholder="O que você precisa?">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
-                <div class="header-icons">
-                    <div class="icon-item" id="user-icon">
-                        <i class="fas fa-user"></i>
-                        <span>Minha Conta</span>
-                    </div>
-                    <div class="icon-item" id="cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                        <span>Meu Carrinho</span>
-                    </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-top">
+            <div class="logo" onclick="scrollToTop()">
+                <i class="fas fa-hard-hat"></i>
+                <div class="logo-text">
+                    <h1>SODIMAC</h1>
+                    <span>Construdecor S/A</span>
                 </div>
             </div>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="O que você está procurando? Ex: cimento, tinta, piso...">
+                <button onclick="buscarProduto()"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="header-actions">
+                <div class="action-item" onclick="abrirLogin()">
+                    <i class="fas fa-user-circle"></i>
+                    <div>
+                        <small>Bem-vindo!</small>
+                        <strong>Entrar / Cadastrar</strong>
+                    </div>
+                </div>
+                <div class="action-item cart" onclick="abrirCarrinho()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                    <div>
+                        <small>Meu carrinho</small>
+                        <strong id="cartTotal">R$ 0,00</strong>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- NAVEGAÇÃO -->
         <nav class="main-nav">
-            <div class="container nav-content">
-                <ul>
-                    <li><a href="#"><i class="fas fa-bars"></i> Categorias</a></li>
-                    <li><a href="#"><i class="fas fa-tools"></i> Ferramentas</a></li>
-                    <li><a href="#"><i class="fas fa-paint-roller"></i> Construção</a></li>
-                    <li><a href="#"><i class="fas fa-couch"></i> Decoração</a></li>
-                    <li><a href="#"><i class="fas fa-plug"></i> Elétrica</a></li>
-                    <li><a href="#"><i class="fas fa-faucet"></i> Hidráulica</a></li>
-                    <li><a href="#"><i class="fas fa-tags"></i> Ofertas</a></li>
-                </ul>
-            </div>
+            <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i> Categorias</button>
+            <ul id="mainMenu">
+                <li><a href="#"><i class="fas fa-tools"></i> Ferramentas</a></li>
+                <li><a href="#"><i class="fas fa-paint-roller"></i> Pintura</a></li>
+                <li><a href="#"><i class="fas fa-bath"></i> Banheiro</a></li>
+                <li><a href="#"><i class="fas fa-couch"></i> Decoração</a></li>
+                <li><a href="#"><i class="fas fa-bolt"></i> Elétrica</a></li>
+                <li><a href="#"><i class="fas fa-faucet"></i> Hidráulica</a></li>
+                <li><a href="#"><i class="fas fa-tree"></i> Jardim</a></li>
+                <li><a href="#"><i class="fas fa-industry"></i> Construção</a></li>
+                <li class="promo"><a href="#"><i class="fas fa-fire"></i> Ofertas</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <!-- Banner Principal -->
-        <section class="banner">
-            <div class="banner-content">
-                <h2>Transforme sua casa com a Sodimac</h2>
-                <p>Materiais de construção, decoração e muito mais com os melhores preços.</p>
-                <button class="btn-primary" id="banner-btn">Confira as Ofertas <i class="fas fa-arrow-right"></i></button>
-            </div>
-        </section>
-
-        <!-- Informações da Empresa -->
-        <section class="company-info">
-            <h2><i class="fas fa-building"></i> Informações da Empresa</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <i class="fas fa-id-card"></i>
-                    <h3>CNPJ</h3>
-                    <p>03.439.316/0001-72</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-file-invoice"></i>
-                    <h3>Inscrição Estadual SP</h3>
-                    <p>115.347.642.111</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-signature"></i>
-                    <h3>Razão Social</h3>
-                    <p>Construdecor S/A</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-store"></i>
-                    <h3>Nome Fantasia</h3>
-                    <p>Sodimac</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>Data da Abertura</h3>
-                    <p>07/10/1999 (26 anos, 11 meses e 20 dias)</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-map-pin"></i>
-                    <h3>Endereço</h3>
-                    <p>Rua Dos Patriotas, 1213 - Ipiranga</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-mail-bulk"></i>
-                    <h3>CEP</h3>
-                    <p>04207-040</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-city"></i>
-                    <h3>Município/Estado</h3>
-                    <p>São Paulo - SP</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-phone-alt"></i>
-                    <h3>Telefone</h3>
-                    <p>(11) 2728-700</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>CNAE Principal</h3>
-                    <p>47.44-0-99 - Comércio varejista de materiais de construção em geral</p>
+    <!-- BANNER PRINCIPAL -->
+    <section class="hero">
+        <div class="hero-slider" id="heroSlider">
+            <div class="slide active">
+                <div class="slide-content">
+                    <h2>Reforma Completa com até 40% OFF</h2>
+                    <p>Materiais selecionados para sua obra sair do papel</p>
+                    <button class="btn-primary" onclick="scrollToProdutos()">Ver Ofertas <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
-        </section>
-
-        <!-- Categorias em Destaque -->
-        <section class="categories">
-            <h2><i class="fas fa-th-large"></i> Categorias em Destaque</h2>
-            <div class="category-grid">
-                <div class="category-card" data-category="ferramentas">
-                    <i class="fas fa-hammer"></i>
-                    <h3>Ferramentas</h3>
-                    <p>Mais de 2.000 itens</p>
-                </div>
-                <div class="category-card" data-category="construcao">
-                    <i class="fas fa-trowel"></i>
-                    <h3>Construção</h3>
-                    <p>Cimento, tijolos e mais</p>
-                </div>
-                <div class="category-card" data-category="decoracao">
-                    <i class="fas fa-palette"></i>
-                    <h3>Decoração</h3>
-                    <p>Para deixar sua casa linda</p>
-                </div>
-                <div class="category-card" data-category="eletrica">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Elétrica</h3>
-                    <p>Fios, tomadas e iluminação</p>
-                </div>
-                <div class="category-card" data-category="hidraulica">
-                    <i class="fas fa-water"></i>
-                    <h3>Hidráulica</h3>
-                    <p>Tubos, conexões e metais</p>
-                </div>
-                <div class="category-card" data-category="jardim">
-                    <i class="fas fa-seedling"></i>
-                    <h3>Jardim</h3>
-                    <p>Plantas, vasos e ferramentas</p>
+            <div class="slide">
+                <div class="slide-content">
+                    <h2>Chegou a Primavera na Sodimac</h2>
+                    <p>Decore sua casa com estilo e economia</p>
+                    <button class="btn-primary" onclick="scrollToProdutos()">Aproveitar <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
-        </section>
+            <div class="slide">
+                <div class="slide-content">
+                    <h2>Frete Grátis acima de R$ 499</h2>
+                    <p>Para toda a Grande São Paulo</p>
+                    <button class="btn-primary" onclick="scrollToProdutos()">Comprar Agora <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
 
-        <!-- Produtos em Destaque -->
-        <section class="products">
+    <!-- VANTAGENS -->
+    <section class="vantagens">
+        <div class="vantagem-card">
+            <i class="fas fa-truck-fast"></i>
+            <h3>Entrega Rápida</h3>
+            <p>Receba em até 48h na Grande SP</p>
+        </div>
+        <div class="vantagem-card">
+            <i class="fas fa-hand-holding-usd"></i>
+            <h3>Melhor Preço</h3>
+            <p>Garantimos o menor preço do mercado</p>
+        </div>
+        <div class="vantagem-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Compra Segura</h3>
+            <p>Site protegido e dados criptografados</p>
+        </div>
+        <div class="vantagem-card">
+            <i class="fas fa-headset"></i>
+            <h3>Atendimento 24h</h3>
+            <p>Suporte online e por telefone</p>
+        </div>
+    </section>
+
+    <!-- CATEGORIAS -->
+    <section class="categorias" id="categorias">
+        <div class="section-header">
+            <h2><i class="fas fa-th-large"></i> Categorias</h2>
+            <p>Navegue por nossas categorias e encontre o que precisa</p>
+        </div>
+        <div class="categorias-grid">
+            <div class="categoria-card" onclick="filtrarCategoria('Ferramentas')">
+                <div class="categoria-icon" style="background: linear-gradient(135deg,#ff6b6b,#ee5a6f)"><i class="fas fa-tools"></i></div>
+                <h3>Ferramentas</h3>
+                <p>+1.200 produtos</p>
+            </div>
+            <div class="categoria-card" onclick="filtrarCategoria('Pintura')">
+                <div class="categoria-icon" style="background: linear-gradient(135deg,#4ecdc4,#44a08d)"><i class="fas fa-paint-roller"></i></div>
+                <h3>Pintura</h3>
+                <p>+850 produtos</p>
+            </div>
+            <div class="categoria-card" onclick="filtrarCategoria('Banheiro')">
+                <div class="categoria-icon" style="background: linear-gradient(135deg,#a8e6cf,#3bb78f)"><i class="fas fa-bath"></i></div>
+                <h3>Banheiro</h3>
+                <p>+640 produtos</p>
+            </div>
+            <div class="categoria-card" onclick="filtrarCategoria('Decoração')">
+                <div class="categoria-icon" style="background: linear-gradient(135deg,#ffd93d,#f6b93b)"><i class="fas fa-couch"></i></div>
+                <h3>Decoração</h3>
+                <p>+2.100 produtos</p>
+            </div>
+            <div class="categoria-card" onclick="filtrarCategoria('Elétrica')">
+                <div class="categoria-icon" style="background: linear-gradient(135deg,#ff9a76,#ff6b6b)"><i class="fas fa-bolt"></i></div>
+                <h3>Elétrica</h3>
+                <p>+980 produtos</p>
+            </div>
+            <div class="categoria-card" onclick="filtrarCategoria('Hidráulica')">
+                <div class="categoria-icon" style="background: linear-gradient(135deg,#74b9ff,#0984e3)"><i class="fas fa-faucet"></i></div>
+                <h3>Hidráulica</h3>
+                <p>+720 produtos</p>
+            </div>
+            <div class="categoria-card" onclick="filtrarCategoria('Jardim')">
+                <div class="categoria-icon" style="background: linear-gradient(135deg,#a8e063,#56ab2f)"><i class="fas fa-tree"></i></div>
+                <h3>Jardim</h3>
+                <p>+430 produtos</p>
+            </div>
+            <div class="categoria-card" onclick="filtrarCategoria('Construção')">
+                <div class="categoria-icon" style="background: linear-gradient(135deg,#b2bec3,#636e72)"><i class="fas fa-industry"></i></div>
+                <h3>Construção</h3>
+                <p>+1.500 produtos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="filtros">
+        <div class="section-header">
+            <h2><i class="fas fa-filter"></i> Filtrar Produtos</h2>
+        </div>
+        <div class="filtros-bar">
+            <select id="filtroCategoria" onchange="aplicarFiltros()">
+                <option value="">Todas as Categorias</option>
+                <option value="Ferramentas">Ferramentas</option>
+                <option value="Pintura">Pintura</option>
+                <option value="Banheiro">Banheiro</option>
+                <option value="Decoração">Decoração</option>
+                <option value="Elétrica">Elétrica</option>
+                <option value="Hidráulica">Hidráulica</option>
+                <option value="Jardim">Jardim</option>
+                <option value="Construção">Construção</option>
+            </select>
+            <select id="filtroPreco" onchange="aplicarFiltros()">
+                <option value="">Qualquer Preço</option>
+                <option value="0-50">Até R$ 50</option>
+                <option value="50-200">R$ 50 - R$ 200</option>
+                <option value="200-500">R$ 200 - R$ 500</option>
+                <option value="500-99999">Acima de R$ 500</option>
+            </select>
+            <select id="filtroOrdenacao" onchange="aplicarFiltros()">
+                <option value="relevancia">Mais Relevantes</option>
+                <option value="menor-preco">Menor Preço</option>
+                <option value="maior-preco">Maior Preço</option>
+                <option value="avaliacao">Melhor Avaliação</option>
+            </select>
+            <button class="btn-limpar" onclick="limparFiltros()"><i class="fas fa-eraser"></i> Limpar</button>
+        </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section class="produtos" id="produtos">
+        <div class="section-header">
             <h2><i class="fas fa-star"></i> Produtos em Destaque</h2>
-            <div class="product-grid" id="product-grid">
-                <!-- Produtos serão inseridos via JavaScript -->
-            </div>
-        </section>
+            <p id="contadorProdutos">Exibindo todos os produtos</p>
+        </div>
+        <div class="produtos-grid" id="produtosGrid">
+            <!-- Produtos inseridos via JS -->
+        </div>
+        <button class="btn-carregar" onclick="carregarMais()"><i class="fas fa-plus"></i> Carregar mais produtos</button>
+    </section>
 
-        <!-- Serviços -->
-        <section class="services">
-            <h2><i class="fas fa-concierge-bell"></i> Nossos Serviços</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-truck"></i>
-                    <h3>Entrega Rápida</h3>
-                    <p>Entregamos em até 24h para toda a Grande São Paulo.</p>
+    <!-- OFERTAS DO DIA -->
+    <section class="ofertas-dia">
+        <div class="oferta-banner">
+            <div class="oferta-texto">
+                <span class="badge-oferta"><i class="fas fa-fire"></i> OFERTA DO DIA</span>
+                <h2>Até 60% OFF em Ferramentas</h2>
+                <p>Aproveite as melhores ofertas em ferramentas profissionais</p>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item"><span id="horas">12</span><small>Horas</small></div>
+                    <div class="countdown-item"><span id="minutos">45</span><small>Min</small></div>
+                    <div class="countdown-item"><span id="segundos">30</span><small>Seg</small></div>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-ruler-combined"></i>
-                    <h3>Projeto de Ambientes</h3>
-                    <p>Consultoria gratuita para planejar seu espaço.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-credit-card"></i>
-                    <h3>Parcelamento Facilitado</h3>
-                    <p>Em até 12x sem juros no cartão Sodimac.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-tools"></i>
-                    <h3>Instalação Profissional</h3>
-                    <p>Equipe especializada para montar seus móveis.</p>
-                </div>
+                <button class="btn-primary" onclick="scrollToProdutos()">Ver Todas <i class="fas fa-arrow-right"></i></button>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-column">
-                <h3><i class="fas fa-hard-hat"></i> Sodimac</h3>
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <i class="fas fa-envelope-open-text"></i>
+            <h2>Receba Ofertas Exclusivas</h2>
+            <p>Cadastre-se e ganhe 10% de desconto na primeira compra</p>
+            <form class="newsletter-form" onsubmit="inscreverNewsletter(event)">
+                <input type="email" placeholder="Digite seu e-mail" required>
+                <button type="submit">Cadastrar <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- INFORMAÇÕES DA EMPRESA -->
+    <section class="empresa-info">
+        <div class="section-header">
+            <h2><i class="fas fa-building"></i> Informações da Empresa</h2>
+        </div>
+        <div class="info-grid">
+            <div class="info-card">
+                <i class="fas fa-file-contract"></i>
+                <h3>Razão Social</h3>
                 <p>Construdecor S/A</p>
-                <p>CNPJ: 03.439.316/0001-72</p>
-                <p>Inscrição Estadual SP: 115.347.642.111</p>
-                <p>Aberto desde 07/10/1999</p>
             </div>
-            <div class="footer-column">
-                <h3><i class="fas fa-map-marker-alt"></i> Endereço</h3>
-                <p>Rua Dos Patriotas, 1213</p>
-                <p>Ipiranga - São Paulo/SP</p>
-                <p>CEP: 04207-040</p>
-                <p><i class="fas fa-phone"></i> (11) 2728-700</p>
+            <div class="info-card">
+                <i class="fas fa-store"></i>
+                <h3>Nome Fantasia</h3>
+                <p>Sodimac</p>
             </div>
-            <div class="footer-column">
-                <h3><i class="fas fa-clock"></i> Horário de Funcionamento</h3>
-                <p>Segunda a Sábado: 8h às 20h</p>
-                <p>Domingo: 9h às 15h</p>
-                <p>Feriados: 9h às 15h</p>
+            <div class="info-card">
+                <i class="fas fa-id-card"></i>
+                <h3>CNPJ</h3>
+                <p>03.439.316/0001-72</p>
             </div>
-            <div class="footer-column">
-                <h3><i class="fas fa-share-alt"></i> Redes Sociais</h3>
-                <div class="social-icons">
+            <div class="info-card">
+                <i class="fas fa-file-invoice"></i>
+                <h3>Inscrição Estadual</h3>
+                <p>115.347.642.111</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Data de Abertura</h3>
+                <p>07/10/1999</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-clock"></i>
+                <h3>Tempo de Atividade</h3>
+                <p>26 anos e 11 meses</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Endereço</h3>
+                <p>Rua Dos Patriotas, 1213 - Ipiranga</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-map"></i>
+                <h3>CEP / Cidade</h3>
+                <p>04207-040 - São Paulo/SP</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-phone"></i>
+                <h3>Telefone</h3>
+                <p>(11) 2728-700</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-briefcase"></i>
+                <h3>CNAE Principal</h3>
+                <p>47.44-0-99 - Comércio varejista de materiais de construção</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo-footer">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3>SODIMAC</h3>
+                </div>
+                <p>Tudo para sua obra, reforma e decoração. Há mais de 26 anos construindo sonhos.</p>
+                <div class="social">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-youtube"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
                 </div>
+            </div>
+            <div class="footer-col">
+                <h4>Institucional</h4>
+                <ul>
+                    <li><a href="#">Sobre a Sodimac</a></li>
+                    <li><a href="#">Trabalhe Conosco</a></li>
+                    <li><a href="#">Nossas Lojas</a></li>
+                    <li><a href="#">Sustentabilidade</a></li>
+                    <li><a href="#">Imprensa</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Ajuda</h4>
+                <ul>
+                    <li><a href="#">Central de Atendimento</a></li>
+                    <li><a href="#">Prazos e Entregas</a></li>
+                    <li><a href="#">Trocas e Devoluções</a></li>
+                    <li><a href="#">Formas de Pagamento</a></li>
+                    <li><a href="#">Frete e Montagem</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul class="contato-list">
+                    <li><i class="fas fa-map-marker-alt"></i> Rua Dos Patriotas, 1213 - Ipiranga, São Paulo/SP</li>
+                    <li><i class="fas fa-phone"></i> (11) 2728-700</li>
+                    <li><i class="fas fa-envelope"></i> atendimento@sodimac.com.br</li>
+                    <li><i class="fas fa-clock"></i> Seg a Sáb: 8h às 22h</li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Sodimac - Todos os direitos reservados. CNAE: 47.44-0-99</p>
+            <p>© 2025 Sodimac - Construdecor S/A | CNPJ: 03.439.316/0001-72 | IE: 115.347.642.111</p>
+            <p>Rua Dos Patriotas, 1213 - Ipiranga - São Paulo/SP - CEP: 04207-040</p>
         </div>
     </footer>
 
-    <!-- Modal do Carrinho -->
-    <div id="cart-modal" class="modal">
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- MODAL CARRINHO -->
+    <div class="modal" id="modalCarrinho">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2><i class="fas fa-shopping-cart"></i> Meu Carrinho</h2>
-            <ul id="cart-items"></ul>
-            <p id="cart-total">Total: R$ 0,00</p>
-            <button class="btn-primary" id="checkout-btn">Finalizar Compra</button>
+            <div class="modal-header">
+                <h2><i class="fas fa-shopping-cart"></i> Meu Carrinho</h2>
+                <button class="close" onclick="fecharCarrinho()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="carrinhoItens">
+                <p class="carrinho-vazio">Seu carrinho está vazio 😢</p>
+            </div>
+            <div class="modal-footer" id="carrinhoFooter" style="display:none;">
+                <div class="total">
+                    <span>Total:</span>
+                    <strong id="totalCarrinho">R$ 0,00</strong>
+                </div>
+                <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar Compra <i class="fas fa-check"></i></button>
+            </div>
         </div>
     </div>
+
+    <!-- MODAL LOGIN -->
+    <div class="modal" id="modalLogin">
+        <div class="modal-content modal-login">
+            <div class="modal-header">
+                <h2><i class="fas fa-user-circle"></i> Entrar</h2>
+                <button class="close" onclick="fecharLogin()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="fazerLogin(event)">
+                    <div class="form-group">
+                        <label><i class="fas fa-envelope"></i> E-mail</label>
+                        <input type="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-lock"></i> Senha</label>
+                        <input type="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width:100%">Entrar</button>
+                    <p class="cadastro-link">Não tem conta? <a href="#">Cadastre-se</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICAÇÃO -->
+    <div class="toast" id="toast"></div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
