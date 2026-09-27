@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sodimac | Construção e Decoração</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <span><i class="fas fa-phone"></i> (11) 2728-700</span>
+                <span><i class="fas fa-map-marker-alt"></i> Rua Dos Patriotas, 1213 - Ipiranga, São Paulo/SP</span>
+                <span><i class="fas fa-clock"></i> Seg a Sáb: 8h às 20h | Dom: 9h às 15h</span>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container header-content">
+                <div class="logo">
+                    <i class="fas fa-hard-hat"></i>
+                    <h1>Sodimac</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="O que você precisa?">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-icons">
+                    <div class="icon-item" id="user-icon">
+                        <i class="fas fa-user"></i>
+                        <span>Minha Conta</span>
+                    </div>
+                    <div class="icon-item" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                        <span>Meu Carrinho</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container nav-content">
+                <ul>
+                    <li><a href="#"><i class="fas fa-bars"></i> Categorias</a></li>
+                    <li><a href="#"><i class="fas fa-tools"></i> Ferramentas</a></li>
+                    <li><a href="#"><i class="fas fa-paint-roller"></i> Construção</a></li>
+                    <li><a href="#"><i class="fas fa-couch"></i> Decoração</a></li>
+                    <li><a href="#"><i class="fas fa-plug"></i> Elétrica</a></li>
+                    <li><a href="#"><i class="fas fa-faucet"></i> Hidráulica</a></li>
+                    <li><a href="#"><i class="fas fa-tags"></i> Ofertas</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Banner Principal -->
+        <section class="banner">
+            <div class="banner-content">
+                <h2>Transforme sua casa com a Sodimac</h2>
+                <p>Materiais de construção, decoração e muito mais com os melhores preços.</p>
+                <button class="btn-primary" id="banner-btn">Confira as Ofertas <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Informações da Empresa -->
+        <section class="company-info">
+            <h2><i class="fas fa-building"></i> Informações da Empresa</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-id-card"></i>
+                    <h3>CNPJ</h3>
+                    <p>03.439.316/0001-72</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-file-invoice"></i>
+                    <h3>Inscrição Estadual SP</h3>
+                    <p>115.347.642.111</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-signature"></i>
+                    <h3>Razão Social</h3>
+                    <p>Construdecor S/A</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-store"></i>
+                    <h3>Nome Fantasia</h3>
+                    <p>Sodimac</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Data da Abertura</h3>
+                    <p>07/10/1999 (26 anos, 11 meses e 20 dias)</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-map-pin"></i>
+                    <h3>Endereço</h3>
+                    <p>Rua Dos Patriotas, 1213 - Ipiranga</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-mail-bulk"></i>
+                    <h3>CEP</h3>
+                    <p>04207-040</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-city"></i>
+                    <h3>Município/Estado</h3>
+                    <p>São Paulo - SP</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Telefone</h3>
+                    <p>(11) 2728-700</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>CNAE Principal</h3>
+                    <p>47.44-0-99 - Comércio varejista de materiais de construção em geral</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categorias em Destaque -->
+        <section class="categories">
+            <h2><i class="fas fa-th-large"></i> Categorias em Destaque</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="ferramentas">
+                    <i class="fas fa-hammer"></i>
+                    <h3>Ferramentas</h3>
+                    <p>Mais de 2.000 itens</p>
+                </div>
+                <div class="category-card" data-category="construcao">
+                    <i class="fas fa-trowel"></i>
+                    <h3>Construção</h3>
+                    <p>Cimento, tijolos e mais</p>
+                </div>
+                <div class="category-card" data-category="decoracao">
+                    <i class="fas fa-palette"></i>
+                    <h3>Decoração</h3>
+                    <p>Para deixar sua casa linda</p>
+                </div>
+                <div class="category-card" data-category="eletrica">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Elétrica</h3>
+                    <p>Fios, tomadas e iluminação</p>
+                </div>
+                <div class="category-card" data-category="hidraulica">
+                    <i class="fas fa-water"></i>
+                    <h3>Hidráulica</h3>
+                    <p>Tubos, conexões e metais</p>
+                </div>
+                <div class="category-card" data-category="jardim">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Jardim</h3>
+                    <p>Plantas, vasos e ferramentas</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Produtos em Destaque -->
+        <section class="products">
+            <h2><i class="fas fa-star"></i> Produtos em Destaque</h2>
+            <div class="product-grid" id="product-grid">
+                <!-- Produtos serão inseridos via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Serviços -->
+        <section class="services">
+            <h2><i class="fas fa-concierge-bell"></i> Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Entrega Rápida</h3>
+                    <p>Entregamos em até 24h para toda a Grande São Paulo.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-ruler-combined"></i>
+                    <h3>Projeto de Ambientes</h3>
+                    <p>Consultoria gratuita para planejar seu espaço.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Parcelamento Facilitado</h3>
+                    <p>Em até 12x sem juros no cartão Sodimac.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Instalação Profissional</h3>
+                    <p>Equipe especializada para montar seus móveis.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3><i class="fas fa-hard-hat"></i> Sodimac</h3>
+                <p>Construdecor S/A</p>
+                <p>CNPJ: 03.439.316/0001-72</p>
+                <p>Inscrição Estadual SP: 115.347.642.111</p>
+                <p>Aberto desde 07/10/1999</p>
+            </div>
+            <div class="footer-column">
+                <h3><i class="fas fa-map-marker-alt"></i> Endereço</h3>
+                <p>Rua Dos Patriotas, 1213</p>
+                <p>Ipiranga - São Paulo/SP</p>
+                <p>CEP: 04207-040</p>
+                <p><i class="fas fa-phone"></i> (11) 2728-700</p>
+            </div>
+            <div class="footer-column">
+                <h3><i class="fas fa-clock"></i> Horário de Funcionamento</h3>
+                <p>Segunda a Sábado: 8h às 20h</p>
+                <p>Domingo: 9h às 15h</p>
+                <p>Feriados: 9h às 15h</p>
+            </div>
+            <div class="footer-column">
+                <h3><i class="fas fa-share-alt"></i> Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sodimac - Todos os direitos reservados. CNAE: 47.44-0-99</p>
+        </div>
+    </footer>
+
+    <!-- Modal do Carrinho -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><i class="fas fa-shopping-cart"></i> Meu Carrinho</h2>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Total: R$ 0,00</p>
+            <button class="btn-primary" id="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
